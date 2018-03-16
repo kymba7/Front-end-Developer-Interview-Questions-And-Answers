@@ -11,19 +11,53 @@ sometimes don't need to add event listeners for every element.
 
 #### Explain how `this` works in JavaScript
 
-*Not answered yet*
+this by default refers to global object. this could mean in object could be referring to itself and in a function it is referred by the object that owns the function. When used outside object or function it refers to global or window.
 
 #### Explain how prototypal inheritance works
 
-*Not answered yet*
+When it comes to inheritance, JavaScript only has one construct: objects. Each object has a private property which holds a link to another object called its prototype. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. By definition, null has no prototype, and acts as the final link in this prototype chain.
+
+Constructor:  Every function expression is a constructor
+
+```
+var x = function(j){
+  this.i = 0  
+  this.j = j
+  
+  this.getJ = function() {
+    return this.j
+  }
+}
+
+// this two function inherrit everything from x 
+
+var x1 = new x(3)
+var x3 = new x(4)
+
+
+we can take out the 'getJfunction and save inside prototype
+
+x.prototype.this.getJ = function() {
+ 
+}
+now both have access to prototype method however function is different and not frame same constructor
+
+
+```
+https://repl.it/@mpatino117/Inheritance-and-constructor
+
 
 #### What do you think of AMD vs CommonJS?
 
-*Not answered yet*
+CommonJS is a way of defining modules with the help of an exports object, that defines the module contents. 
 
-#### Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
+#### Explain why the following doesn't work as an IIFE: 
 
-*Not answered yet*
+ immediately-invoked function expression
+
+`(function () { /* ... */ })();`
+`(function () { /* ... */ }());`
+`(() => { /* ... */ })();`
 
 ###### What needs to be changed to properly make it an IIFE?
 
@@ -39,7 +73,8 @@ sometimes don't need to add event listeners for every element.
 
 #### What is a closure, and how/why would you use one?
 
-*Not answered yet*
+JavaScript variables can belong to the local or global scope.
+Global variables can be made local (private) with closures.
 
 #### What's a typical use case for anonymous functions?
 
@@ -116,7 +151,9 @@ Handlebars, Mustache, etc.
 
 #### Explain "hoisting".
 
-*Not answered yet*
+In JavaScript, a variable can be declared after it has been used.
+In other words; a variable can be used before it has been declared.
+In other progamming languages you have block scope, however in javascript you are able to mutate variable directly. However, this problem is now solved with const and or let.
 
 #### Describe event bubbling.
 
