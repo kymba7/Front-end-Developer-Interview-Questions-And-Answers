@@ -160,7 +160,7 @@ Yes.
 
 ###### If so, what libraries have you used?
 
-Handlebars, Mustache, etc.
+Handlebars, Mustache, EJS
 
 #### Explain "hoisting".
 
@@ -231,11 +231,20 @@ Disadvantage
 
 #### Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
 
-*Not answered yet*
+It’s harder to read the code and reason about it when variables seem to appear out of thin air.
+
+Anyone can update a global variable from any point in the program at any time (and from any thread if there’s more than one going).
+
+Security anyone can go into the console and make inputs and exploit some vulnerabilities  
+
 
 #### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
-*Not answered yet*
+The DOMContentLoaded event is triggered when the page’s Document Object Model (DOM) is ready. 
+
+I would use it for example when creating a widget so script can run once the DOM is loading
+
+https://ablogaboutcode.com/2011/06/14/how-javascript-loading-works-domcontentloaded-and-onload
 
 #### Explain what a single page app is and how to make one SEO-friendly.
 
@@ -243,7 +252,22 @@ Disadvantage
 
 #### What is the extent of your experience with Promises and/or their polyfills?
 
-*Not answered yet*
+```
+new Promise((resolve, rejected) => {
+    if(resolve){
+        reslove("successed");
+    }
+    else{
+        rejected("failed");
+    }
+})
+.then((result) => {
+    console.log(result);
+})
+.then((result) => {
+    console.log(result);
+});
+```
 
 #### What are the pros and cons of using Promises instead of callbacks?
 
@@ -255,12 +279,27 @@ Disadvantage
 
 #### What tools and techniques do you use debugging JavaScript code?
 
-*Not answered yet*
+Utilize chrome tools such as console.logs, network tabs for HTTP erros and or responses. I set error breaks 
 
 #### What language constructions do you use for iterating over object properties and array items?
 
-*Not answered yet*
+```
+new Promise((resolve, rejected) => {
+    if(resolve){
+        reslove("successed");
+    }
+    else{
+        rejected("failed");
+    }
+})
+.then((result) => {
+    console.log(result);
+})
+.then((result) => {
+    console.log(result);
+});
 
+```
 #### Explain the difference between mutable and immutable objects.
 ###### What is an example of an immutable object in JavaScript?
 ###### What are the pros and cons of immutability?
