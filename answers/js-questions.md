@@ -76,9 +76,11 @@ CommonJS is a way of defining modules with the help of an exports object, that d
 JavaScript variables can belong to the local or global scope.
 Global variables can be made local (private) with closures.
 
+Closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain. The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function’s variables, and it has access to the global variables.
+
 #### What's a typical use case for anonymous functions?
 
-*Not answered yet*
+Since Anonymous Functions are function expressions rather than the regular function declaration which are statements. Function expressions are more flexible. We can assign functions to variables, object properties, pass them as arguments to other functions, and even write a simple one line code enclosed in an anonymous functions.
 
 #### How do you organize your code? (module pattern, classical inheritance?)
 
@@ -92,7 +94,18 @@ Global variables can be made local (private) with closures.
 
 #### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 
-*Not answered yet*
+function Person() {}
+Function Declaration
+Code above declares a function statement (statements perform an action) but does not execute, however, it does get registered into the global namespace.
+
+var person = Person()
+Function Expression
+A variable ‘var person’ has been defined and contains a value reference to a Person function. Any JavaScript Expressions (including Function Expressions) always returns a value. This may also be an Anonymous function if no name has been assign to a function but wrapped in parenthesis to be interpreted as an expression.
+
+var person = new Person()
+Function Constructor
+By adding the keyword ‘new’. We are instantiating a new object of the Person class constructor. A function declaration is just a regular function unless it has been instantiated, it then becomes a class constructor.
+
 
 #### What's the difference between `.call` and `.apply`?
 
